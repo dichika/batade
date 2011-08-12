@@ -95,7 +95,7 @@ function(filename, data, foot=TRUE, charset="CP932", lang="JP"){
          type <- "DH"
          }       
      }else{
-       if(isTRUE(as.logical(grep(".*\\.png$|.*\\.jpg$|.*\\.jpeg$|.*\\.gif$|.*\\.tiff$", content, perl=TRUE)))){
+       if(isTRUE(as.logical(grep(".*\\.png$|.*\\.jpg$|.*\\.jpeg$|.*\\.gif$|.*\\.tiff$|.*\\.svg$", content, perl=TRUE)))){
          type <- "I"
          }else if(isTRUE(as.logical(grep(".*\\.htm$|.*\\.html$", content, perl=TRUE)))){
          type <- "H"
