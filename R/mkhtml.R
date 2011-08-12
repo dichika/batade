@@ -89,13 +89,13 @@ function(filename, data, foot=TRUE, charset="CP932", lang="JP"){
     ROW <- data[i,]
     content <- unlist(strsplit(split="\\|", ROW[1]))
      if(length(content)>1){
-         if(isTRUE(as.logical(grep(".*\\.png$|.*\\.jpg$|.*\\.jpeg$|.*\\.gif$|.*\\.tiff$", content, perl=TRUE))) && nchar(content) < 15){
+         if(isTRUE(as.logical(grep(".*\\.png$|.*\\.jpg$|.*\\.jpeg$|.*\\.gif$|.*\\.tiff$|.*\\.svg$", content, perl=TRUE)))){
          type <- "DI"
-         }else if(isTRUE(as.logical(grep(".*\\.htm$|.*\\.html$", content, perl=TRUE))) && nchar(content) < 15){
+         }else if(isTRUE(as.logical(grep(".*\\.htm$|.*\\.html$", content, perl=TRUE)))){
          type <- "DH"
          }       
      }else{
-       if(isTRUE(as.logical(grep(".*\\.png$|.*\\.jpg$|.*\\.jpeg$|.*\\.gif$|.*\\.tiff$", content, perl=TRUE))) && nchar(ROW[1]) < 15){
+       if(isTRUE(as.logical(grep(".*\\.png$|.*\\.jpg$|.*\\.jpeg$|.*\\.gif$|.*\\.tiff$", content, perl=TRUE)))){
          type <- "I"
          }else if(isTRUE(as.logical(grep(".*\\.htm$|.*\\.html$", content, perl=TRUE)))){
          type <- "H"
