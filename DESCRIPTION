@@ -5,10 +5,15 @@ Version: 0.1
 Date: 2011-06-13
 Author: Ichikawa Daisuke
 Maintainer: Ichikawa Daisuke <ichikawadaisuke@gmail.com>
-Depends: hwriter
-Description: This package provides some utility functions (e.g HTML
-        report maker).
+Depends:
+    hwriter
+Description: This package provides some utility functions
+    (e.g HTML report maker).
 License: GPL-2
 Packaged: 2011-06-17 14:36:57 UTC; ichikawadaisuke
 Repository: CRAN
 Date/Publication: 2011-06-17 18:22:32
+Collate:
+    'batade-package.R'
+    'mkhtml.R'
+    'mkrox.R'
