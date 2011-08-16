@@ -1,78 +1,47 @@
-\name{obj}
-\alias{obj}
-%- Also NEED an '\alias' for EACH other topic documented here.
-\title{
-%%  ~~function to do ... ~~
-}
-\description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
-}
+\name{mkrox}
+\alias{mkrox}
+\title{make roxygen-style file from function code}
 \usage{
-obj(func, pkgdir)
+  mkrox(func, pkgdir)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{func}{
-%%     ~~Describe \code{func} here~~
-}
-  \item{pkgdir}{
-%%     ~~Describe \code{pkgdir} here~~
-}
-}
-\details{
-%%  ~~ If necessary, more details than the description above ~~
+  \item{func}{character}
+
+  \item{pkgdir}{nedd a full path like "paste(sep="/",
+  getwd(), ''/batade/"}
 }
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
+  NULL ( a roxygen-style R source code)
 }
-\references{
-%% ~put references to the literature/web site here ~
+\description{
+  make roxygen-style file from function code.
 }
-\author{
-%%  ~~who you are~~
+\details{
+  %% ~~ If necessary, more details than the description
+  above ~~
 }
 \note{
-%%  ~~further notes~~
-}
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+  %% ~~further notes~~
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
-
-## The function is currently defined as
-function(func, pkgdir){
-    if(!is.character(func)){
-    	stop("func must be character")
-    }
-    require(stringr)
-    require(Rd2roxygen)
-    mandir <- str_c(pkgdir, "/man/")
-    codedir <- str_c(pkgdir, "/R/")
-    
-    #output Rd file
-    Rdname <- str_c(mandir, func, ".Rd")
-    obj <- eval(parse(text=func))
-    prompt(obj, Rdname)
-
-    #output roxygen code
-    codename <- str_c(codedir, func, ".R")
-    parse_and_save(path=Rdname, file=codename)
-
-    #join roxygen and function code
-    dump(func, file=codename, append=TRUE) 
-    }
+plot_num <- function(n){
+num <- runif(n)
+plot(num)
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+dir.create("sample")
+dir.create("sample/R")
+dir.create("sample/man")
+mkrox("plot_num",pkgdir=str_c(getwd(), "/sample"))
+}
+\author{
+  Ichikawa Daisuke
+}
+\references{
+  %% ~put references to the literature/web site here ~
+}
+\seealso{
+  %% ~~objects to See Also as \code{\link{help}}, ~~~
+}
+\keyword{~kwd1}
+\keyword{~kwd2}
+
