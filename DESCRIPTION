@@ -17,3 +17,5 @@ Collate:
     'batade-package.R'
     'mkhtml.R'
     'mkrox.R'
+    'clpcloud.R'
+    'dirplot.R'
