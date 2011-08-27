@@ -31,8 +31,7 @@ function(type=NULL, min=1, ...){
     txt <- read.delim("clipboard", as.is=TRUE, header=FALSE)
   }
   res <- unlist(apply(txt,1,RMeCabC, mypref=1))
-  #•ŽŒ“™‚ðœ‚­
-  res <- res[!(attr(res, "names") %in% c("•ŽŒ", "‹L†", "•“®ŽŒ", "Ú“ªŽŒ","˜A‘ÌŽŒ"))]
+  res <- res[!(attr(res, "names") %in% c("åŠ©è©ž", "åŠ©å‹•è©ž", "è¨˜å·", "æŽ¥é ­è©ž","é€£ä½“è©ž"))]
   if(is.null(type)){
   	res <- res
   } else {
